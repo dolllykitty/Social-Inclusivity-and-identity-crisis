@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evidences </title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #eaf6f2 0%, #f5f5f5 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            color: #2c4838;
+        }
+        .menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 60px;
+            width: 60px;
+            background: #4e8065;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 18px 0;
+            box-shadow: 2px 0 12px rgba(24, 59, 45, 0.13);
+            z-index: 20;
+        }
+        .menu .menu-logo {
+            width: 38px;
+            height: 38px;
+            background: #eaf6f2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(24, 59, 45, 0.07);
+            transition: background 0.2s;
+        }
+        .menu .menu-logo:hover {
+            background: #8cc1ad;
+        }
+        .menu .submenu {
+            display: none;
+            position: absolute;
+            left: 65px;
+            top: 10px;
+            background: #eaf6f2;
+            box-shadow: 2px 0 12px rgba(24, 59, 45, 0.13);
+            border-radius: 12px;
+            min-width: 150px;
+            flex-direction: column;
+            z-index: 30;
+            padding: 10px 0;
+        }
+        .menu:hover .submenu,
+        .menu:focus-within .submenu {
+            display: flex;
+        }
+        .menu .submenu a {
+            text-decoration: none;
+            color: #184537;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 15px;
+            margin: 2px 0;
+            background: #eaf6f2;
+            transition: background 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+        .menu .submenu a.active,
+        .menu .submenu a:hover,
+        .menu .submenu a:focus {
+            background: #4e8065;
+            color: #fff;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 28px;
+            max-width: 1300px;
+            margin: auto;
+            margin-left: 80px; /* space for menu logo */
+            padding-top: 20px;
+        }
+        .frame {
+            background: #fff;
+            border: 2px solid #8cc1ad;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(24, 59, 45, 0.10);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 230px;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+        .frame:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(24, 59, 45, 0.18);
+        }
+        .frame img {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            border-bottom: 1px solid #4e8065;
+            border-radius: 16px 16px 0 0;
+            background: #eaf6f2;
+        }
+        .frame .text-box {
+            background: #8daea9;
+            color: #184537;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 15px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(18, 84, 44, 0.08);
+            font-weight: 500;
+        }
+        @media (max-width: 1200px) {
+            .gallery {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 900px;
+            }
+        }
+        @media (max-width: 800px) {
+            .gallery {
+            grid-template-columns: repeat(2, 1fr);
+            margin-left: 0;
+            padding-left: 0;
+            }
+            .menu {
+            position: static;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 10px 0;
+            box-shadow: none;
+            background: #8cc1ad;
+            border-radius: 0;
+            }
+            .menu .menu-logo {
+            margin-left: 10px;
+            }
+            .menu .submenu {
+            position: static;
+            min-width: 0;
+            box-shadow: none;
+            border-radius: 0;
+            left: 0;
+            top: 50px;
+            }
+        }
+        </style>
+    </head>
+    <div class="menu" tabindex="0">
+        <div class="menu-logo" aria-label="Open menu" title="Menu">
+        <!-- Simple menu icon (hamburger) SVG -->
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <rect y="5" width="26" height="3.5" rx="1.5" fill="#4e8065"/>
+            <rect y="11" width="26" height="3.5" rx="1.5" fill="#4e8065"/>
+            <rect y="17" width="26" height="3.5" rx="1.5" fill="#4e8065"/>
+        </svg>
+        </div>
+        <div class="submenu">
+            <a href="index.html">Home</a>
+            <a href="solution.html">Solution</a>
+            <a href="Research.html">Research</a>
+            <a href="CC.html">Causes & Consequences</a>
+            <a href="pics.html" class="active">Gallery</a>
+        </div>
+    </div>
+<body>
+    <div class="gallery">
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212100.png" alt="Pic 1">
+            <div class="text-box">Spreading awarness to students</div>
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212911.png" alt="Pic 2">
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212901.png" alt="Pic 3">
+            <div class="text-box">Survey graphs</div>
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212528.png" alt="Pic 4">
+            <div class="text-box">Poster</div>
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 205152.png" alt="Pic 5">
+            <div class="text-box">Interview of student council memeber</div>
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 205053.png" alt="Pic 6">
+            <div class="text-box">Interview of middle school reprecentative</div>
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212605.png" alt="Pic 7">
+            
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212731.png" alt="Pic 8">
+        </div>
+        <div class="frame">
+            <img src="evidence 5.jpg" alt="Pic 9">
+            <div class="text-box">Teamwork in building our outcome</div>
+        </div>
+        <div class="frame">
+            <img src="evidence 6.jpg" alt="Pic 10">
+            <div class="text-box">Development of website</div>
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212822.png" alt="Pic 11">
+            <div class="text-box">How much students rate our schools identity crises help.</div>
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212844.png" alt="Pic 12">
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212754.png" alt="Pic 13">
+        </div>
+        <div class="frame">
+            <img src="Screenshot 2025-08-22 212807.png" alt="Pic 14">
+            
+        </div>
+        <div class="frame">
+            <img src="" alt="Pic 15">
+            <div class="text-box">Interview of ...</div>
+        </div>
+    </div>
+</body>
+</html>
